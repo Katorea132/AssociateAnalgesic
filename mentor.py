@@ -45,7 +45,7 @@ class Mentor:
         if time in self.__valid_times:
             self.__time = time
         else:
-            raise ValueError("Not AM, PM or undefined")
+            raise ValueError("Not AM, PM or Undefined")
 
     def __hours_available(self):
         """
@@ -83,6 +83,7 @@ class Mentor:
 
     def is_available(self, time):
         """Determiens whether or not a time lapse is available
+        Always True for Undefined cases
 
         Args:
             time (str): A string containing the time in military date format
@@ -97,6 +98,9 @@ class Mentor:
     def occupy_hours(self, time, startup):
         """Populates a hour to appear taken with the name
         of the startup
+
+        On Undefined, the companies names will be added together on a single
+        string, separated by forward slasehs '/'
 
         Args:
             hour (str): time to populate, in military date format

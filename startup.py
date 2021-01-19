@@ -122,7 +122,8 @@ class Startup:
         self.name = name
 
     def is_available(self, day, time):
-        """Determines whether or not a time frame has been set or not
+        """Determines whether or not a time frame has been set or not,
+        Always False for Undefined cases
 
         Args:
             day (str): The day of the meeting, full name of the day

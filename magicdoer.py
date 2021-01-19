@@ -58,6 +58,17 @@ def match_them_all(mentor, startup):
 
 
 def assign_them_all(mentors, startups):
+    """This function reads from the data.csv file in the same folder
+    line by line, assuming the following order of items:
+    Name (of the mentor), day he is available, Time frame (AM or PM),
+    Company1, Company2,...
+    and call for the match_them_all function to populate the appropiate
+    objects
+
+    Args:
+        mentors ([type]): [description]
+        startups ([type]): [description]
+    """
     with open("./data.csv", "r") as f:
         file = csv.reader(f)
         file.__next__()
