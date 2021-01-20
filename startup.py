@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This module contains the Startup class, in charge of keeping track
-of available times for each startup
+of avaliable times for each startup
 """
 
 
@@ -9,7 +9,7 @@ class Startup:
     """
     This is the Startup class, each instance contains the basic information
     of a different startup, it is also used to match
-    available times with a mentor.
+    avaliable times with a mentor.
     """
     def __init__(self, name):
         self.slots = {
@@ -121,7 +121,7 @@ class Startup:
         }
         self.name = name
 
-    def is_available(self, day, time):
+    def is_avaliable(self, day, time):
         """Determines whether or not a time frame has been set or not,
         Always False for Undefined cases
 

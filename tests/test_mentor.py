@@ -117,14 +117,14 @@ class TestMentor(unittest.TestCase):
         self.assertRaises(ValueError, Mentor, "pizza", "Monday", "")
         self.assertRaises(ValueError, Mentor, "pizza", "Monday", 3)
 
-    def test_mentor_is_available_correct_returns(self):
+    def test_mentor_is_avaliable_correct_returns(self):
         """
-        Tests for the appropiated return of the is available function
+        Tests for the appropiated return of the is avaliable function
         """
         a = Mentor("pizza", "Monday", "AM")
-        self.assertTrue(a.is_available("9:30"))
+        self.assertTrue(a.is_avaliable("9:30"))
         a.hours["9:30"][0] = True
-        self.assertFalse(a.is_available("9:30"))
+        self.assertFalse(a.is_avaliable("9:30"))
 
     def test_mentor_correct_time_frame_assigned(self):
         """
@@ -132,27 +132,27 @@ class TestMentor(unittest.TestCase):
 the mentor
         """
         a = Mentor("pizza", "Monday", "AM")
-        self.assertTrue(a.is_available("9:30"))
-        self.assertRaises(KeyError, a.is_available, "14:50")
+        self.assertTrue(a.is_avaliable("9:30"))
+        self.assertRaises(KeyError, a.is_avaliable, "14:50")
         a = Mentor("pizza", "Monday", "PM")
-        self.assertTrue(a.is_available("14:50"))
-        self.assertRaises(KeyError, a.is_available, "9:50")
+        self.assertTrue(a.is_avaliable("14:50"))
+        self.assertRaises(KeyError, a.is_avaliable, "9:50")
 
     def test_mentor_correct_resting_time(self):
         """
         Tests that no meeting is possible in the resting time (14:30-14:50)
         """
         a = Mentor("pizza", "Monday", "PM")
-        self.assertRaises(KeyError, a.is_available, "14:30")
+        self.assertRaises(KeyError, a.is_avaliable, "14:30")
 
     def test_mentor_correct_space_between_time_frames(self):
         """
         Tests that no meeting is possible in the time between time frames
         """
         a = Mentor("pizza", "Monday", "PM")
-        self.assertRaises(KeyError, a.is_available, "16:30")
+        self.assertRaises(KeyError, a.is_avaliable, "16:30")
         a = Mentor("pizza", "Monday", "AM")
-        self.assertRaises(KeyError, a.is_available, "12:50")
+        self.assertRaises(KeyError, a.is_avaliable, "12:50")
 
     def test_mentor_occupy_hours_non_undefined(self):
         """
@@ -163,7 +163,7 @@ the hour and company name when non undefined values are given
         a.occupy_hours("9:30", "Pepsiman")
         self.assertTrue(a.hours["9:30"][0])
         self.assertEqual(a.hours["9:30"][1], "Pepsiman")
-        self.assertFalse(a.is_available("9:30"))
+        self.assertFalse(a.is_avaliable("9:30"))
 
     def test_mentor_occupy_hours_on_undefined(self):
         """

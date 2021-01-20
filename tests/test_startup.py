@@ -27,16 +27,16 @@ class TestMentor(unittest.TestCase):
         with self.assertRaises(TypeError):
             a = Startup()
 
-    def test_is_available_returns_correctly(self):
+    def test_is_avaliable_returns_correctly(self):
         """
         It should return True if the hour and day combination are empty\
 for Undefined it is always False
         """
         a = Startup("Pepsiman")
-        self.assertTrue(a.is_available("Tuesday", "9:30"))
+        self.assertTrue(a.is_avaliable("Tuesday", "9:30"))
         a.slots["Tuesday"]["9:30"][0] = True
-        self.assertFalse(a.is_available("Tuesday", "9:30"))
-        self.assertFalse(a.is_available("Undefined", "Undefined"))
+        self.assertFalse(a.is_avaliable("Tuesday", "9:30"))
+        self.assertFalse(a.is_avaliable("Undefined", "Undefined"))
 
     def test_occupy_hours_assigns_correctly(self):
         """
@@ -44,8 +44,8 @@ for Undefined it is always False
 correctly
         """
         a = Startup("Pepsiman")
-        self.assertTrue(a.is_available("Tuesday", "9:30"))
+        self.assertTrue(a.is_avaliable("Tuesday", "9:30"))
         a.occupy_hours("Tuesday", "9:30", "pizza")
-        self.assertFalse(a.is_available("Tuesday", "9:30"))
+        self.assertFalse(a.is_avaliable("Tuesday", "9:30"))
         self.assertEqual(a.slots["Tuesday"]["9:30"][1], "pizza")
         self.assertTrue(a.slots["Tuesday"]["9:30"][0])

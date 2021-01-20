@@ -12,7 +12,7 @@ from mentor import Mentor
 from datesanitazer import day_date
 
 
-def are_available(mentor, start, time):
+def are_avaliable(mentor, start, time):
     """Tells if the hour and day are valid for both mentor and startup
 
     Args:
@@ -23,7 +23,7 @@ def are_available(mentor, start, time):
     Returns:
         bool: True or false depending on if the time is valid for both or not
     """
-    return mentor.is_available(time) and start.is_available(mentor.day, time)
+    return mentor.is_avaliable(time) and start.is_avaliable(mentor.day, time)
 
 
 def match_them_all(mentor, startup):
@@ -43,13 +43,13 @@ def match_them_all(mentor, startup):
                   "16:10"]
     if mentor.time == "AM":
         for time in morning_birds:
-            if (are_available(mentor, startup, time)):
+            if (are_avaliable(mentor, startup, time)):
                 mentor.occupy_hours(time, startup.name)
                 startup.occupy_hours(mentor.day, time, mentor.name)
                 break
     elif mentor.time == "PM":
         for time in night_owls:
-            if (are_available(mentor, startup, time)):
+            if (are_avaliable(mentor, startup, time)):
                 mentor.occupy_hours(time, startup.name)
                 startup.occupy_hours(mentor.day, time, mentor.name)
                 break
@@ -60,7 +60,7 @@ def match_them_all(mentor, startup):
 def assign_them_all(mentors, startups):
     """This function reads from the data.csv file in the same folder
     line by line, assuming the following order of items:
-    Name (of the mentor), day he is available, Time frame (AM or PM),
+    Name (of the mentor), day he is avaliable, Time frame (AM or PM),
     Company1, Company2,...
     and call for the match_them_all function to populate the appropiate
     objects

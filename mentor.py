@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This module contains the Mentor class, in charge of keeping track
-of which day and timeset a mentor has available
+of which day and timeset a mentor has avaliable
 """
 
 
@@ -9,7 +9,7 @@ class Mentor:
     """
     This is the Mentor class, each instance contains the basic
     information of a different mentor, it is also used to
-    match available times with a startup.
+    match avaliable times with a startup.
     """
     __valid_days = {
         "Monday", "Tuesday", "Wednesday",
@@ -23,7 +23,7 @@ class Mentor:
         self.name = name
         self.day = day
         self.time = time
-        self.__hours_available()
+        self.__hours_avaliable()
 
     @property
     def day(self):
@@ -47,7 +47,7 @@ class Mentor:
         else:
             raise ValueError("Not AM, PM or Undefined")
 
-    def __hours_available(self):
+    def __hours_avaliable(self):
         """
         Sets correctly the time frame for a given mentor
         """
@@ -81,15 +81,15 @@ class Mentor:
                 "Undefined": [True, "", "Undefined"],
             }
 
-    def is_available(self, time):
-        """Determiens whether or not a time lapse is available
+    def is_avaliable(self, time):
+        """Determiens whether or not a time lapse is avaliable
         Always True for Undefined cases
 
         Args:
             time (str): A string containing the time in military date format
 
         Returns:
-            bool: True or False if its available or not, respectively
+            bool: True or False if its avaliable or not, respectively
         """
         if time == "Undefined" or not self.hours:
             return True
@@ -108,6 +108,6 @@ class Mentor:
         """
         if time == "Undefined":
             self.hours["Undefined"][1] += startup + "/"
-        elif self.is_available(time):
+        elif self.is_avaliable(time):
             self.hours[time][0] = True
             self.hours[time][1] = startup
