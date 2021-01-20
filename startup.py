@@ -122,8 +122,8 @@ class Startup:
         self.name = name
 
     def is_avaliable(self, day, time):
-        """Determines whether or not a time frame has been set or not,
-        Always False for Undefined cases
+        """Determines whether or not a time frame has been set or not, by\
+        accessing the first value on the hour list
 
         Args:
             day (str): The day of the meeting, full name of the day
@@ -131,6 +131,7 @@ class Startup:
 
         Returns:
             bool: True or False if it has been or has been not taken
+            Always False for Undefined cases
         """
         if time == "Undefined" or day == "Undefined":
             return False
@@ -139,6 +140,8 @@ class Startup:
     def occupy_hours(self, day, time, mentor):
         """Populates an hour and day to appear taken with the
         name of the mentor.
+        It also sets the first value of the hour list to true,
+        meaning it is taken
 
         Args:
             day (str): Day, written by its name ex: 'Monday'

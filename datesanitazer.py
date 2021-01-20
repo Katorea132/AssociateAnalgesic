@@ -16,7 +16,7 @@ def day_date(day):
         from 0 to 4 respectively
 
     Returns:
-        date: returns a date object
+        date: returns a date object with format yyyy/mm/dd
     """
     if day == "Undefined":
         return ("Undefined")

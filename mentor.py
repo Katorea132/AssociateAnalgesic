@@ -82,14 +82,16 @@ class Mentor:
             }
 
     def is_avaliable(self, time):
-        """Determiens whether or not a time lapse is avaliable
-        Always True for Undefined cases
+        """Determiens whether or not a time lapse is avaliable, by accessing\
+        the first value in the list of each hour, which is set to false when\
+        not taken and true when taken
 
         Args:
             time (str): A string containing the time in military date format
 
         Returns:
             bool: True or False if its avaliable or not, respectively
+            Always True for Undefined cases
         """
         if time == "Undefined" or not self.hours:
             return True
@@ -97,7 +99,8 @@ class Mentor:
 
     def occupy_hours(self, time, startup):
         """Populates a hour to appear taken with the name
-        of the startup
+        of the startup, it also sets the first value in the hour list
+        to mark it as taken (thus, setting the value to True)
 
         On Undefined, the companies names will be added together on a single
         string, separated by forward slasehs '/'

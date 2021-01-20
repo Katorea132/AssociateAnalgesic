@@ -62,12 +62,12 @@ def assign_them_all(mentors, startups):
     line by line, assuming the following order of items:
     Name (of the mentor), day he is avaliable, Time frame (AM or PM),
     Company1, Company2,...
-    and call for the match_them_all function to populate the appropiate
+    and calls for the match_them_all function to populate the appropiate
     objects
 
     Args:
-        mentors ([type]): [description]
-        startups ([type]): [description]
+        mentors (dict): A dictionary of mentor objects
+        startups (dict): A dictionary of startup objects
     """
     with open("./data.csv", "r") as f:
         file = csv.reader(f)
@@ -87,7 +87,8 @@ def assign_them_all(mentors, startups):
 
 def print_them_all(mentors):
     """A function that prints all the mentor meetings
-    with it's respective time and startup
+    with it's respective time and startup to the console, separated
+    by spaces.
 
     Args:
         mentors (dict): Dictionary of mentor objects
@@ -108,11 +109,12 @@ def print_them_all(mentors):
 
 def save_them_all(mentors, startups):
     """This function saves all the mentors schedule in a cvs file, ordered by
-    order of appearance and time of meetings, in the original csv file,
-    Mentors with undefined times only take 1 line in the file
+    order of appearance in the original csv file and time of meetings.
+    Mentors with undefined times only take 1 line in the file with all the\
+    startups in a field
 
-    It also saves each startup schedules, with both taken and free time slots
-    for the each day, there is no order in which they are created but
+    It also saves each startup's schedule, with both taken and free time slots
+    for each day, there is no order in which they are created but
     each file internally shows the times in order both in days and hours
 
     Args:
