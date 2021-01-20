@@ -8,7 +8,7 @@
 [TOC]
 
 #What is this for:
-Associate Analgesic is a program designed to automatize the assignation of meetings between mentors and startups, respecting the available times for the mentors and avoiding collisions (meaning, a meeting with 2 startups at the same time in the side of a mentor or a startup having a meeting with 2 different mentors at the same time).
+Associate Analgesic is a program designed to automatize the assignation of meetings between mentors and startups, respecting the avaliable times for the mentors and avoiding collisions (meaning, a meeting with 2 startups at the same time in the side of a mentor or a startup having a meeting with 2 different mentors at the same time).
 
 Such information is then displayed on a Console, as well as saved on a CSV file which can be easily imported to Google Sheets for easy visualization, the information in this CSV can be used to automate the scheduling on the calendars of both parties.
 
@@ -29,9 +29,10 @@ Or in its standalone version, by simply executing the program.
 * The Ubuntu x86-64 version is called "Associate_Analgesic_ELFx86-64"
 * The Windows 10 version is called "Associate_Analgesic.exe"
 * There's no Mac version for I have no acces to such OS
+* The windows version is recognized as a trojan by Windows Defender, thiswas made an standalone executable with pyinstaller with the following command "pyinstaller -F main.py", in case you want to reproducethe executable locally, even though it will most likely result in another False Positive.
 
 Once it has been succesfully executed, a console will appear with the information of each mentor, with the assigned times for each start up.
-* Those mentors that had undefined times availables didn't receive any for this information is not known yet
+* Those mentors that had undefined times avaliables didn't receive any for this information is not known yet
 Also, multiple files will be created in CVS format, in order to be easily visualized through Google Sheets or similar tools.
 The files generated will be
 * "mentors_schedule.csv", the main CSV file, formatted to easily automate the calendar invitations
