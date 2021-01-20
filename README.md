@@ -26,6 +26,9 @@ The program can be executed as a python script, for this you will need to instal
 
 Run in the command line: python3 main.py
 Or in its standalone version, by simply executing the program.
+* The Ubuntu x86-64 version is called "Associate_Analgesic_ELFx86-64"
+* The Windows 10 version is called "Associate_Analgesic.exe"
+* There's no Mac version for I have no acces to such OS
 
 Once it has been succesfully executed, a console will appear with the information of each mentor, with the assigned times for each start up.
 * Those mentors that had undefined times availables didn't receive any for this information is not known yet
