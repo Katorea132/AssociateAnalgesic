@@ -1,13 +1,6 @@
 # Assoociate Analgesic
 
-
-**Table of Contents**
-
-[TOCM]
-
-[TOC]
-
-#What is this for:
+# What this is for:
 Associate Analgesic is a program designed to automatize the assignation of meetings between mentors and startups, respecting the avaliable times for the mentors and avoiding collisions (meaning, a meeting with 2 startups at the same time in the side of a mentor or a startup having a meeting with 2 different mentors at the same time).
 
 Such information is then displayed on a Console, as well as saved on a CSV file which can be easily imported to Google Sheets for easy visualization, the information in this CSV can be used to automate the scheduling on the calendars of both parties.
