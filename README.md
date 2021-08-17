@@ -13,7 +13,7 @@ You will need a CSV file in the same folder of the executable (or the script) ca
 * The first field must contain the name of the mentor
 * The second one must contain  which day of the week the mentor has avaliable, choosing exactly one of the following options: Monday, Tuesday, Wednesday, Thursday, Friday.
 The program can be executed as a python script, for this you will need to install python 3 and execute the "main.py" file.
-* The third one must peek a time frame, it can be either "AM"or "PM"
+* The third one must pick a time frame, it can be either "AM" or "PM"
 * Any other field will be considered a startup name and treated as so.
 
 
